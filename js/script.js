@@ -563,6 +563,8 @@ $(function () {
         var photo = ep.photos[imageIndex];
         var subreddit = '/r/' + photo.subreddit;
 		
+		console.log(photo);
+		
 		var directorsScraped = photo.title.every(d => directors.includes(d));
 
         $('#navboxTitle').html(photo.title + " (" + photo.favCount + " Favs)")
@@ -763,7 +765,7 @@ $(function () {
             e6aipRating = "rating:s";
         }
 
-        var jsonUrl = "https://e6ai.net/posts.json?tags="+e6aipRating+"+"+e6aipTags +"&limit="+ e6aipLimit+"&page="+e6aipPageNumber;
+        var jsonUrl = "https://floofgens.net/posts.json?tags="+e6aipRating+"+"+e6aipTags +"&limit="+ e6aipLimit+"&page="+e6aipPageNumber;
         console.log(jsonUrl);
         //log(jsonUrl);
         var failedAjax = function (data) {
@@ -800,10 +802,10 @@ $(function () {
                 
                 addImageSlide({
                     url: item.file.url,
-                    title: item.tags.director,
+                    title: item.tags.artist,
                     over18: isOver18,
                     subreddit: "",
-                    commentsLink: "https://e6ai.net/post/show/" + item.id,
+                    commentsLink: "https://floofgens.net/post/show/" + item.id,
 					favCount: item.fav_count
                 });
             });
@@ -966,7 +968,7 @@ $(function () {
         // if(displayedSubredditName.length > capsize) {
         //     displayedSubredditName = displayedSubredditName.substr(0,capsize) + "&hellip;";
         // }
-        $('#subredditUrl').html("<a href=\' https://www.e6ai.net \'> e6ai.net</a>");
+        $('#subredditUrl').html("<a href=\' https://www.floofgens.net \'> floofgens.net</a>");
 
         document.title = "e6AIp - " + (e6aipTags ? e6aipTags : "Latest");
     };
