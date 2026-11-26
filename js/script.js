@@ -765,7 +765,7 @@ $(function () {
             e6aipRating = "rating:s";
         }
 
-        var jsonUrl = "https://floofgens.net/posts.json?tags="+e6aipRating+"+"+e6aipTags +"&limit="+ e6aipLimit+"&page="+e6aipPageNumber;
+        var jsonUrl = "https://floofgens.net/posts.json?tags="+e6aipRating+"+"+e6aipTags +"&limit="+ e6aipLimit+"&page="+e6aipPageNumber+"&v1=true";
         console.log(jsonUrl);
         //log(jsonUrl);
         var failedAjax = function (data) {
